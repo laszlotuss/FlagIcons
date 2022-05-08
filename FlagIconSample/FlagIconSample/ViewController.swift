@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import flag_icon_swift
+import FlagIcons
 
 fileprivate struct Consts {
     static let countryCellId = "countryCell";
