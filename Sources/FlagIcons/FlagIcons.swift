@@ -87,11 +87,15 @@ open class FlagIcons {
     }
 
     fileprivate class func assetsBundle() -> Bundle? {
+#if SWIFT_PACKAGE
+        return Bundle.module
+#else
         let bundle = Bundle(for: self)
         guard let assetsBundlePath = bundle.path(forResource: "assets", ofType: "bundle") else {
             return nil
         }
-        return Bundle(path: assetsBundlePath);
+        return Bundle(path: assetsBundlePath)
+#endif
     }
     
 }
